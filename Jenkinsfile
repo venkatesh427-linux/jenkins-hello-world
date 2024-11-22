@@ -5,16 +5,16 @@ pipeline{
     } 
 
     stages{
-       stage("Running shell script"){
-            // steps{
-            //     script{
-            //         for (int i =0; i<60; i++){
-            //             echo "${i+1}"
-            //             sleep i
-            //         }
-            //     }
-            //     }
-        }
+    //    stage("Running shell script"){
+    //         steps{
+    //             script{
+    //                 for (int i =0; i<60; i++){
+    //                     echo "${i+1}"
+    //                     sleep i
+    //                 }
+    //             }
+    //             }
+    //     }
 
         stage("Maven Build"){
             steps{
