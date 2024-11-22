@@ -11,7 +11,7 @@ pipeline {
     stage('Maven Test') {
       steps {
         sh 'mvn test'
-        junit(testResults: '/target/surefire-reports/TEST-com.kodekloud.hello_demo.HelloControllerTests.xml', keepProperties: true, keepTestNames: true)
+        junit(testResults: 'target/surefire-reports/TEST*.xml*', keepProperties: true, keepTestNames: true)
       }
     }
 
