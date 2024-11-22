@@ -2,7 +2,10 @@ pipeline{
     agent any
     tools {
         maven 'm398'
-    } stage("Running shell script"){
+    } 
+
+    stages{
+       stage("Running shell script"){
             steps{
                 script{
                     for (int i =0; i<60; i++){
@@ -12,9 +15,6 @@ pipeline{
                 }
                 }
         }
-
-    stages{
-       
 
         stage("Maven Build"){
             steps{
