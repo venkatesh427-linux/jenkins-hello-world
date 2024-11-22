@@ -2,14 +2,19 @@ pipeline{
     agent any
     tools {
         maven 'm398'
-    }
+    } stage("Running shell script"){
+            steps{
+                script{
+                    for (int i =0; i<60; i++){
+                        echo "${i+1}"
+                        sleep i
+                    }
+                }
+                }
+        }
 
     stages{
-        // stage("git checkout"){
-        //     steps{
-        //         git branch: 'main', url: 'https://github.com/Vineeth8686/jenkins-hello-world.git'
-        //     }
-        // }
+       
 
         stage("Maven Build"){
             steps{
