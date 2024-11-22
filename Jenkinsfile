@@ -4,7 +4,7 @@ pipeline {
     stage('Maven Build') {
       steps {
         sh 'mvn clean package -DskipTests=true'
-        archiveArtifacts 'target/ hello-demo-*'
+        archiveArtifacts 'target/hello-demo-*'
       }
     }
 
