@@ -10,6 +10,7 @@ pipeline {
     stages {
         stage('Echo Version') {
             steps {
+                sh 'export JAVA_HOME=$JAVA_HOME && export PATH=$JAVA_HOME/bin:$PATH'
                 sh 'echo Print Maven Version'
                 sh 'mvn -version'
             }
