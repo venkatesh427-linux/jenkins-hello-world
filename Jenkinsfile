@@ -9,18 +9,17 @@ pipeline {
     stages {
         stage('Echo Version') {
             steps {
-                sh 'echo Print maven Version'
+                sh 'echo Print Maven Version'
                 sh 'mvn -version'
             }
         }
 
         stage('Build') {
             steps {
-                // Get some code from a GitHub repository
+                // Clone the repository (Uncomment and configure if needed)
                 // git branch: 'main', url: 'https://github.com/venkatesh427-linux/jenkins-hello-world.git'
 
-                // Run Maven Package CMD
-                sh "mvn clean package -DskipTests=true"
+                sh 'mvn clean package -DskipTests=true'
             }
         }
 
@@ -30,8 +29,8 @@ pipeline {
                     for (int i = 0; i < 60; i++) {
                         echo "${i + 1}"
                         sleep 1
-                   }
-                   sh "mvn test"
+                    }
+                    sh 'mvn test'
                 }
             }
         }
